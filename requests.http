@@ -1,0 +1,83 @@
+## Retrieve All Users
+GET http://localhost:8080/api/v1/users
+
+
+### Retrieve User by ID
+GET http://localhost:8080/api/v1/users/1
+
+
+### Create a New User
+POST http://localhost:8080/api/v1/users
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "posts": [
+    {
+      "title": "First Post",
+      "content": "Content of the first post",
+      "author": "John Doe"
+    },
+    {
+      "title": "Second Post",
+      "content": "Content of the second post",
+      "author": "John Doe"
+    }
+  ]
+}
+
+###
+POST http://localhost:8080/api/v1/users
+Content-Type: application/json
+
+{
+  "name": "Alex Dan",
+  "posts": [
+    {
+      "title": "First Post",
+      "content": "Content of the first post",
+      "author": "John Doe"
+    },
+    {
+      "title": "Second Post",
+      "content": "Content of the second post",
+      "author": "John Doe"
+    }
+  ]
+}
+
+###
+POST http://localhost:8080/api/v1/users
+Content-Type: application/json
+
+{
+  "name": "Smith William",
+  "posts": [
+    {
+      "title": "First Post",
+      "content": "Content of the first post",
+      "author": "Smith"
+    },
+    {
+      "title": "Second Post",
+      "content": "Content of the second post",
+      "author": "Smith"
+    }
+  ]
+}
+
+
+###Retrieve Posts of a User by User ID
+GET http://localhost:8080/api/v1/users/1/posts
+
+
+### Get Users with More Than One Post
+GET http://localhost:8080/api/v1/users/with-multiple-posts
+
+
+###Query to Find Users by Post Title
+GET http://localhost:8080/api/v1/users?title=First Post
+
+
+###Navigation from User to Comment
+GET http://localhost:8080/api/v1/users/{userId}/posts/{postId}/comments/{commentId}
